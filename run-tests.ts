@@ -12,7 +12,8 @@ const generatedStackCount = 10_000;
 const nodeVersions = [
     '14.19.1',
     '16.14.2',
-    '17.8.0'
+    '17.8.0',
+    '18.9.1'
 ]
 
 const compilers = [
