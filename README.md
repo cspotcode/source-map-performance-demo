@@ -23,6 +23,8 @@ Requirements:
 * Docker
 * yarn
 
+To run the full suite of tests in docker and capture a table of benchmark results:
+
 ```sh
 # install deps
 yarn
@@ -34,6 +36,14 @@ yarn clean && yarn build
 yarn test
 ```
 
+To run locally and investigate differences in stack traces:
+
+```sh
+yarn clean && yarn build:ts
+yarn run-tests-locally
+```
+
+Exit code will always be zero, but it will log an object describing each test.
 
 ## Example Output
 
