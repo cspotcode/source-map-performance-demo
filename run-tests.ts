@@ -10,10 +10,11 @@ const generatedStackCount = 10_000;
 // const generatedStackCount = 1;
 
 const nodeVersions = [
-    '14.19.1',
-    '16.14.2',
-    '17.8.0',
-    '18.9.1'
+    '16.20.2',
+    '17.9.1',
+    '18.17.1',
+    '19.9.0',
+    '20.5.1'
 ]
 
 const compilers = [
