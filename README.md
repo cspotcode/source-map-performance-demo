@@ -40,43 +40,43 @@ yarn test
 ### Results for 10000 stack traces.
 | node | compiler | options | stack_traces_correct | elapsed_ms |
 | ---- | -------- | ------- | -------------------- | ---------- |
-| 14.19.1 | esbuild | --enable-source-maps | ❌ | 243607 |
-| 14.19.1 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 652 |
-| 14.19.1 | esbuild | -r source-map-support/register | ❌ | 648 |
-| 14.19.1 | esbuild |  |  | 170 |
-| 14.19.1 | tsc | --enable-source-maps | ❌ | 1696 |
-| 14.19.1 | tsc | -r @cspotcode/source-map-support/register | ✅ | 628 |
-| 14.19.1 | tsc | -r source-map-support/register | ❌ | 558 |
-| 14.19.1 | tsc |  |  | 212 |
-| 16.14.2 | esbuild | --enable-source-maps | ❌ | 237183 |
-| 16.14.2 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 595 |
-| 16.14.2 | esbuild | -r source-map-support/register | ❌ | 603 |
-| 16.14.2 | esbuild |  |  | 167 |
-| 16.14.2 | tsc | --enable-source-maps | ❌ | 1701 |
-| 16.14.2 | tsc | -r @cspotcode/source-map-support/register | ✅ | 557 |
-| 16.14.2 | tsc | -r source-map-support/register | ❌ | 455 |
-| 16.14.2 | tsc |  |  | 188 |
-| 17.8.0 | esbuild | --enable-source-maps | ❌ | 240249 |
-| 17.8.0 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 557 |
-| 17.8.0 | esbuild | -r source-map-support/register | ❌ | 524 |
-| 17.8.0 | esbuild |  |  | 160 |
-| 17.8.0 | tsc | --enable-source-maps | ❌ | 1311 |
-| 17.8.0 | tsc | -r @cspotcode/source-map-support/register | ✅ | 526 |
-| 17.8.0 | tsc | -r source-map-support/register | ❌ | 431 |
-| 17.8.0 | tsc |  |  | 187 |
-| 18.9.1 | esbuild | --enable-source-maps | ❌ | 224955 |
-| 18.9.1 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 556 |
-| 18.9.1 | esbuild | -r source-map-support/register | ❌ | 524 |
-| 18.9.1 | esbuild |  |  | 154 |
-| 18.9.1 | tsc | --enable-source-maps | ❌ | 846 |
-| 18.9.1 | tsc | -r @cspotcode/source-map-support/register | ✅ | 515 |
-| 18.9.1 | tsc | -r source-map-support/register | ❌ | 422 |
-| 18.9.1 | tsc |  |  | 192 |
-| 18.17.1 | esbuild | --enable-source-maps | ❌ | 239397 |
-| 18.17.1 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 481 |
-| 18.17.1 | esbuild | -r source-map-support/register | ❌ | 522 |
-| 18.17.1 | esbuild |  |  | 150 |
-| 18.17.1 | tsc | --enable-source-maps | ❌ | 789 |
-| 18.17.1 | tsc | -r @cspotcode/source-map-support/register | ✅ | 465 |
-| 18.17.1 | tsc | -r source-map-support/register | ❌ | 412 |
-| 18.17.1 | tsc |  |  | 187 |
+| 16.20.2 | esbuild | --enable-source-maps | ❌ | 235261 |
+| 16.20.2 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 579 |
+| 16.20.2 | esbuild | -r source-map-support/register | ❌ | 574 |
+| 16.20.2 | esbuild |  |  | 160 |
+| 16.20.2 | tsc | --enable-source-maps | ❌ | 1352 |
+| 16.20.2 | tsc | -r @cspotcode/source-map-support/register | ✅ | 559 |
+| 16.20.2 | tsc | -r source-map-support/register | ❌ | 449 |
+| 16.20.2 | tsc |  |  | 199 |
+| 17.9.1 | esbuild | --enable-source-maps | ❌ | 240502 |
+| 17.9.1 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 580 |
+| 17.9.1 | esbuild | -r source-map-support/register | ❌ | 539 |
+| 17.9.1 | esbuild |  |  | 158 |
+| 17.9.1 | tsc | --enable-source-maps | ❌ | 1358 |
+| 17.9.1 | tsc | -r @cspotcode/source-map-support/register | ✅ | 564 |
+| 17.9.1 | tsc | -r source-map-support/register | ❌ | 453 |
+| 17.9.1 | tsc |  |  | 190 |
+| 18.17.1 | esbuild | --enable-source-maps | ❌ | 243588 |
+| 18.17.1 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 498 |
+| 18.17.1 | esbuild | -r source-map-support/register | ❌ | 533 |
+| 18.17.1 | esbuild |  |  | 152 |
+| 18.17.1 | tsc | --enable-source-maps | ❌ | 832 |
+| 18.17.1 | tsc | -r @cspotcode/source-map-support/register | ✅ | 473 |
+| 18.17.1 | tsc | -r source-map-support/register | ❌ | 428 |
+| 18.17.1 | tsc |  |  | 193 |
+| 19.9.0 | esbuild | --enable-source-maps | ❌ | 326 |
+| 19.9.0 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 521 |
+| 19.9.0 | esbuild | -r source-map-support/register | ❌ | 525 |
+| 19.9.0 | esbuild |  |  | 155 |
+| 19.9.0 | tsc | --enable-source-maps | ❌ | 296 |
+| 19.9.0 | tsc | -r @cspotcode/source-map-support/register | ✅ | 499 |
+| 19.9.0 | tsc | -r source-map-support/register | ❌ | 419 |
+| 19.9.0 | tsc |  |  | 188 |
+| 20.5.1 | esbuild | --enable-source-maps | ❌ | 419 |
+| 20.5.1 | esbuild | -r @cspotcode/source-map-support/register | ✅ | 454 |
+| 20.5.1 | esbuild | -r source-map-support/register | ❌ | 483 |
+| 20.5.1 | esbuild |  |  | 141 |
+| 20.5.1 | tsc | --enable-source-maps | ❌ | 336 |
+| 20.5.1 | tsc | -r @cspotcode/source-map-support/register | ✅ | 438 |
+| 20.5.1 | tsc | -r source-map-support/register | ❌ | 384 |
+| 20.5.1 | tsc |  |  | 173 |
