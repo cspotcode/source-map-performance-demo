@@ -111,7 +111,8 @@ function testStackTrace(o: {
     let correct = true;
     let stack = error.stack!;
     if(normalizeFilenames) stack = stack.replaceAll(realProjectDir, replacementProjectDir);
-    const frames = stack.split('\n').slice(1);
+    const frames = stack.split('\n');
+    frames.splice(0, frames.findIndex((v) => v.startsWith('Error')) + 1);
     const frameResults = [];
     for(let i = 0; i < o.expectFrames.length; i++) {
         const frame = frames[i];
@@ -121,7 +122,7 @@ function testStackTrace(o: {
 
         const frameCorrect = expectedFrame.test(frame);
         correct &&= frameCorrect;
-        let [, filename, lineStr, colStr] = / \((.*):(\d+):(\d+)\)/.exec(frame)!;
+        let [, filename, lineStr, colStr] = / \((.*):(\d+):(\d+)\)/.exec(frame) ?? ['', 'failed to parse stack frame', '1', '1'];
         const lineNo = parseInt(lineStr);
         const colNo = parseInt(colStr);
         if(normalizeFilenames) filename = filename.replace(replacementProjectDir, realProjectDir);
