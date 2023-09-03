@@ -22,11 +22,15 @@ schema.validate(fishtank);
 const app = express();
 
 // Class which generates a stack frame inside the constructor
-class Foo {
+class ModernClass {
     constructor() {
         this.bar();
     }
-    bar() { throw new Error('thrown from method called by constructor'); }
+    bar() { throw new Error('thrown from method called by modern constructor'); }
+}
+function LegacyClass(this: any) {
+    this.bar = () => { throw new Error('thrown from method called by legacy constructor'); }
+    this.bar();
 }
 
 // test stack trace performance
@@ -52,14 +56,27 @@ async function loop() {
     await void 0;
 
     testStackTrace({
-        gen() { new Foo() },
+        gen() { new ModernClass() },
         expectFrames: [{
-            mapped:   /    at Foo\.bar \(.*\/index\.ts:29:19\)/,
-            unmapped: /    at Foo\.bar \(.*\/index\.js:.*\)/,
+            mapped:   /    at ModernClass\.bar \(.*\/index\.ts:29:19\)/,
+            unmapped: /    at ModernClass\.bar \(.*\/index\.js:.*\)/,
             context: ['throw ', 'new Error('],
         }, {
-            mapped:   /    at new Foo \(.*\/index\.ts:27:14\)/,
-            unmapped: /    at new Foo \(.*\/index\.js:.*\)/,
+            mapped:   /    at new ModernClass \(.*\/index\.ts:27:14\)/,
+            unmapped: /    at new ModernClass \(.*\/index\.js:.*\)/,
+            context: ['this.', 'bar()']
+        }],
+    });
+    testStackTrace({
+        //@ts-ignore
+        gen() { new LegacyClass() },
+        expectFrames: [{
+            mapped:   /    at LegacyClass\.bar \(.*\/index\.ts:32:19\)/,
+            unmapped: /    at LegacyClass\.bar \(.*\/index\.js:.*\)/,
+            context: ['throw ', 'new Error('],
+        }, {
+            mapped:   /    at new LegacyClass \(.*\/index\.ts:33:14\)/,
+            unmapped: /    at new LegacyClass \(.*\/index\.js:.*\)/,
             context: ['this.', 'bar()']
         }],
     });
@@ -71,11 +88,11 @@ async function loop() {
             testStackTrace({
                 error: err,
                 expectFrames: [{
-                    mapped:   /    at loop \(.*\/index\.ts:69:21\)/,
+                    mapped:   /    at loop \(.*\/index\.ts:86:21\)/,
                     unmapped: /    at loop \(.*\/index\.js:.*?\)/,
                     context: ['= ', 'new Error']
                 }, {
-                    mapped:   /    at async main \(.*\/index\.ts:44:5\)/,
+                    mapped:   /    at async main \(.*\/index\.ts:48:5\)/,
                     unmapped: /    at async main \(.*\/index\.js:.*?\)/,
                     context: ['', 'await loop();']
                 }]

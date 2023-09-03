@@ -45,6 +45,12 @@ yarn run-tests-locally
 
 Exit code will always be zero, but it will log an object describing each test.
 
+## Missing Tests
+
+Items still not verified by this test:
+
+- modules with file URIs should source-map to file URIs, not native paths
+
 ## Example Output
 
 ### Results for 10000 stack traces.
